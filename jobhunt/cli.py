@@ -180,6 +180,27 @@ def cmd_report(args: argparse.Namespace, settings: Settings, store: JsonStore) -
     return 0
 
 
+def cmd_serve(args: argparse.Namespace, settings: Settings, store: JsonStore) -> int:
+    from .api import WEB_DIST, run
+
+    url = f"http://{args.host}:{args.port}"
+    if WEB_DIST.exists():
+        console.print(f"[green]Website:[/] {url}    [dim]API docs: {url}/docs[/]")
+    else:
+        console.print(
+            f"[yellow]API running at {url}[/] (docs: {url}/docs)\n"
+            "[dim]Website not built yet: run `npm install` and `npm run dev` inside the web folder, "
+            "then open http://localhost:5173[/]"
+        )
+    if args.open:
+        import threading
+        import webbrowser
+
+        threading.Timer(1.5, lambda: webbrowser.open(url)).start()
+    run(host=args.host, port=args.port, offline=settings.offline)
+    return 0
+
+
 def cmd_sources(args: argparse.Namespace, settings: Settings, store: JsonStore) -> int:
     for name, cls in ALL_SOURCES.items():
         console.print(f"[bold]{name:<10}[/] {cls.base_url}")
@@ -237,6 +258,12 @@ def build_parser() -> argparse.ArgumentParser:
 
     sources = sub.add_parser("sources", help="list supported job boards")
     sources.set_defaults(func=cmd_sources)
+
+    serve = sub.add_parser("serve", help="start the website + REST API")
+    serve.add_argument("--host", default="127.0.0.1")
+    serve.add_argument("--port", type=int, default=8000)
+    serve.add_argument("--open", action="store_true", help="open the website in your browser")
+    serve.set_defaults(func=cmd_serve)
     return parser
 
 

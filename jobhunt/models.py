@@ -36,6 +36,31 @@ def clean_text(value: str | None) -> str:
     return _SPACE_RE.sub(" ", text).strip()
 
 
+_PARAGRAPH_END_RE = re.compile(r"</(p|div|h[1-6]|ul|ol|table|section)\s*>", re.I)
+_LINE_END_RE = re.compile(r"</(li|tr)\s*>|<br\s*/?>", re.I)
+_LIST_ITEM_RE = re.compile(r"<li[^>]*>", re.I)
+_INLINE_SPACE_RE = re.compile(r"[ \t\r\f\v]+")
+_MANY_NEWLINES_RE = re.compile(r"\n{3,}")
+
+
+def clean_multiline(value: str | None) -> str:
+    """Like clean_text, but keeps paragraphs and bullet points as plain-text lines.
+
+    The website shows the full job description, so paragraph breaks matter.
+    The result is plain text (never HTML), so it is safe to display anywhere.
+    """
+    if not value:
+        return ""
+    text = _LIST_ITEM_RE.sub("\n• ", value)
+    text = _LINE_END_RE.sub("\n", text)
+    text = _PARAGRAPH_END_RE.sub("\n\n", text)
+    text = html.unescape(_TAG_RE.sub(" ", text))
+    lines = [_INLINE_SPACE_RE.sub(" ", line).strip() for line in text.split("\n")]
+    text = "\n".join(lines)
+    text = re.sub(r"\n\n(?=• )", "\n", text)  # no blank line between bullets
+    return _MANY_NEWLINES_RE.sub("\n\n", text).strip()
+
+
 class JobType(str, Enum):
     FULL_TIME = "full_time"
     PART_TIME = "part_time"
@@ -101,8 +126,8 @@ class Job(BaseModel):
     def _clean_description(cls, value: Any) -> str:
         # Keep the full text so keyword search can look through all of it;
         # the CLI shortens it only when displaying.
-        text = clean_text(value if isinstance(value, str) else "")
-        return text[:8000]
+        text = clean_multiline(value if isinstance(value, str) else "")
+        return text[:12000]
 
     @field_validator("tags", mode="before")
     @classmethod

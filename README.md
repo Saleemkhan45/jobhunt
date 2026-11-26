@@ -1,6 +1,6 @@
 # JobHunt: Job & Internship Aggregator for CS Students
 
-A command-line tool that searches **three job boards at the same time**, cleans and
+A **website and command-line tool** that searches **three job boards at the same time**, cleans and
 validates the results, removes duplicates, and lets you **track every application**
 from "saved" to "selected".
 
@@ -24,6 +24,7 @@ It also keeps your application pipeline in one place.
 - **Application tracker**: save a job and move it through `saved → applied → interview → offer → selected / rejected`, with notes and full history. Invalid moves (e.g. rejected → interview) are blocked
 - **Reports**: counts by status and source, plus your interview rate, exportable to JSON
 - **Offline mode**: `--offline` runs on bundled sample data, so you can demo it without internet
+- **React website**: search page, full job descriptions, and a tracker board, served by a FastAPI REST API
 
 ## Demo
 
@@ -85,14 +86,49 @@ jobhunt sources                                # supported boards
 
 Without installing, `python -m jobhunt ...` works the same way.
 
+## The website (React + FastAPI)
+
+The same Python engine powers a web app:
+
+- **Search page**: keyword, location, job type, age and remote filters, with a demo-data switch
+- **Job page**: the **complete job description**, all details, and an "Apply on …" button that opens the original post
+- **Tracker board**: columns from Saved to Selected; only valid next steps are offered
+- **REST API** with interactive docs at `/docs` (FastAPI + Pydantic)
+
+**Run it (one command, after a one-time build):**
+
+```bash
+pip install -e ".[dev]"     # installs FastAPI + uvicorn too
+cd web
+npm install
+npm run build
+cd ..
+jobhunt serve --open        # opens http://127.0.0.1:8000
+```
+
+**While changing the React code** (live reload), use two terminals:
+
+```bash
+jobhunt serve               # terminal 1: API on :8000
+cd web && npm run dev       # terminal 2: website on http://localhost:5173
+```
+
+| Endpoint | What it does |
+|---|---|
+| `GET /api/search?keyword=python&remote=true&offline=true` | Search all boards concurrently |
+| `GET /api/jobs/{id}` | One job with its full description |
+| `GET /api/applications` · `POST` · `PATCH /{id}` · `DELETE /{id}` | The tracker |
+| `GET /api/report` · `GET /api/transitions` · `GET /api/sources` | Stats, allowed moves, boards |
+
 ## Run the tests
 
 ```bash
 pytest -v
 ```
 
-26 tests cover validation, de-duplication, filters, sorting, concurrency, retry on
-network failure, a board going down, the tracker's status rules, and the CLI end to end.
+34 tests cover validation, de-duplication, filters, sorting, concurrency, retry on
+network failure, a board going down, the tracker's status rules, the CLI end to end,
+and every REST API endpoint.
 
 ## Project structure
 
@@ -100,6 +136,7 @@ network failure, a board going down, the tracker's status rules, and the CLI end
 jobhunt/
 ├── jobhunt/
 │   ├── cli.py            # argparse commands + rich terminal output
+│   ├── api.py            # FastAPI REST API + serves the React build
 │   ├── aggregator.py     # runs all boards concurrently with asyncio.gather
 │   ├── models.py         # Pydantic models: Job, SearchQuery, Application
 │   ├── pipeline.py       # generator pipeline: filter → dedupe → limit
@@ -110,6 +147,12 @@ jobhunt/
 │   └── sources/
 │       ├── base.py       # abstract JobSource class
 │       └── boards.py     # Arbeitnow, Remotive, Himalayas subclasses
+├── web/                  # React + Vite + Tailwind website
+│   └── src/
+│       ├── pages/        # SearchPage, JobPage, TrackerPage
+│       ├── components/   # JobCard, SearchForm, Navbar, badges, toasts
+│       ├── context/      # shared tracker state (React Context)
+│       └── lib/          # API client + formatting helpers
 ├── data/samples/         # sample API responses for offline mode and tests
 ├── tests/
 ├── pyproject.toml
@@ -143,6 +186,5 @@ jobhunt/
 ## Future improvements
 
 - Add more boards (Jobicy, RemoteOK) by writing one subclass each
-- A Streamlit dashboard on top of `aggregator.py`
 - Email or Telegram alerts for new matches (scheduled search)
 - SQLite instead of JSON once the tracker grows

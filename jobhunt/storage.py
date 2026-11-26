@@ -36,6 +36,7 @@ class JsonStore:
 
     @log_call
     def _write(self, path: Path, data: Any) -> None:
+        self._dir.mkdir(parents=True, exist_ok=True)  # folder may have been deleted
         fd, tmp = tempfile.mkstemp(dir=self._dir, suffix=".tmp")
         try:
             with os.fdopen(fd, "w", encoding="utf-8") as handle:
