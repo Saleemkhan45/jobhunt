@@ -1,0 +1,96 @@
+{
+  "0-legal-notice": "Remotive API Legal Notice",
+  "job-count": 5,
+  "jobs": [
+    {
+      "id": 2041881,
+      "url": "https://remotive.com/remote-jobs/software-dev/python-backend-developer-2041881",
+      "title": "Python Backend Developer",
+      "company_name": "Shopwise",
+      "company_logo": null,
+      "category": "Software Development",
+      "tags": [
+        "python",
+        "django",
+        "rest"
+      ],
+      "job_type": "full_time",
+      "publication_date": "2026-11-17T09:00:00",
+      "candidate_required_location": "Europe",
+      "salary": "€55k - €70k",
+      "description": "<p>Duplicate of the Arbeitnow listing — should be de-duplicated.</p>"
+    },
+    {
+      "id": 2041990,
+      "url": "https://remotive.com/remote-jobs/software-dev/junior-full-stack-developer-2041990",
+      "title": "Junior Full Stack Developer",
+      "company_name": "Brightloop",
+      "company_logo": null,
+      "category": "Software Development",
+      "tags": [
+        "react",
+        "node.js",
+        "mongodb",
+        "python"
+      ],
+      "job_type": "full_time",
+      "publication_date": "2026-11-25T09:00:00",
+      "candidate_required_location": "Worldwide",
+      "salary": "$40k - $55k",
+      "description": "<p>MERN stack plus some Python scripting. Great for new grads.</p>"
+    },
+    {
+      "id": 2041950,
+      "url": "https://remotive.com/remote-jobs/data/ml-engineer-intern-2041950",
+      "title": "Machine Learning Engineer Intern",
+      "company_name": "Synthetica",
+      "company_logo": null,
+      "category": "Data",
+      "tags": [
+        "python",
+        "pytorch",
+        "ml"
+      ],
+      "job_type": "internship",
+      "publication_date": "2026-11-23T09:00:00",
+      "candidate_required_location": "Asia, Europe",
+      "salary": "",
+      "description": "<p>Paid 3-month internship. Python &amp; PyTorch.</p>"
+    },
+    {
+      "id": 2041700,
+      "url": "https://remotive.com/remote-jobs/software-dev/react-native-developer-2041700",
+      "title": "React Native Developer",
+      "company_name": "Appforge",
+      "company_logo": null,
+      "category": "Software Development",
+      "tags": [
+        "react native",
+        "javascript"
+      ],
+      "job_type": "contract",
+      "publication_date": "2026-11-20T09:00:00",
+      "candidate_required_location": "Pakistan, India, UAE",
+      "salary": "$25/hr",
+      "description": "<p>Ship features for a fintech mobile app.</p>"
+    },
+    {
+      "id": 2041600,
+      "url": "https://remotive.com/remote-jobs/qa/qa-automation-engineer-2041600",
+      "title": "QA Automation Engineer (Python)",
+      "company_name": "Testly",
+      "company_logo": null,
+      "category": "QA",
+      "tags": [
+        "python",
+        "selenium",
+        "pytest"
+      ],
+      "job_type": "part_time",
+      "publication_date": "2026-11-13T09:00:00",
+      "candidate_required_location": "Worldwide",
+      "salary": null,
+      "description": "<p>Write pytest + Selenium suites.</p>"
+    }
+  ]
+}

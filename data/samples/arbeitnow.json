@@ -1,0 +1,146 @@
+{
+  "data": [
+    {
+      "slug": "junior-python-developer-m-f-d-datawerk-berlin-481201",
+      "company_name": "Datawerk GmbH",
+      "title": "Junior Python Developer (m/f/d)",
+      "description": "<p>Build <strong>data pipelines</strong> with Python, FastAPI and PostgreSQL. Mentoring from senior engineers.</p>",
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/datawerk/junior-python-developer-berlin-481201",
+      "tags": [
+        "Python",
+        "Backend",
+        "FastAPI"
+      ],
+      "job_types": [
+        "Full Time"
+      ],
+      "location": "Berlin",
+      "created_at": 1795510800
+    },
+    {
+      "slug": "working-student-software-engineering-nordlicht-hamburg-481190",
+      "company_name": "Nordlicht AI",
+      "title": "Working Student Software Engineering (Python)",
+      "description": "<p>20h/week. Python, Docker, machine learning tooling.</p>",
+      "remote": true,
+      "url": "https://www.arbeitnow.com/jobs/companies/nordlicht/working-student-hamburg-481190",
+      "tags": [
+        "Python",
+        "Machine Learning"
+      ],
+      "job_types": [
+        "Working Student"
+      ],
+      "location": "Hamburg",
+      "created_at": 1795424400
+    },
+    {
+      "slug": "frontend-developer-react-pixelhaus-munich-481150",
+      "company_name": "Pixelhaus",
+      "title": "Frontend Developer React",
+      "description": "React, TypeScript, Tailwind CSS. Hybrid in Munich.",
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/pixelhaus/frontend-developer-react-481150",
+      "tags": [
+        "React",
+        "JavaScript",
+        "Frontend"
+      ],
+      "job_types": [
+        "Full Time"
+      ],
+      "location": "Munich",
+      "created_at": 1795338000
+    },
+    {
+      "slug": "backend-engineer-node-js-cloudkite-remote-481120",
+      "company_name": "CloudKite",
+      "title": "Backend Engineer Node.js",
+      "description": "Node.js, Express and MongoDB microservices. Fully remote within EU.",
+      "remote": true,
+      "url": "https://www.arbeitnow.com/jobs/companies/cloudkite/backend-engineer-node-481120",
+      "tags": [
+        "Node.js",
+        "MongoDB",
+        "Backend"
+      ],
+      "job_types": [
+        "Full Time"
+      ],
+      "location": "Remote",
+      "created_at": 1795251600
+    },
+    {
+      "slug": "data-analyst-intern-quantia-vienna-481099",
+      "company_name": "Quantia",
+      "title": "Data Analyst Intern",
+      "description": "Python, pandas and SQL. 6-month internship.",
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/quantia/data-analyst-intern-481099",
+      "tags": [
+        "Python",
+        "SQL",
+        "Data"
+      ],
+      "job_types": [
+        "Internship"
+      ],
+      "location": "Vienna",
+      "created_at": 1795078800
+    },
+    {
+      "slug": "python-backend-developer-shopwise-remote-481050",
+      "company_name": "Shopwise",
+      "title": "Python Backend Developer (m/w/d)",
+      "description": "Django REST APIs for e-commerce.",
+      "remote": true,
+      "url": "https://www.arbeitnow.com/jobs/companies/shopwise/python-backend-481050",
+      "tags": [
+        "Python",
+        "Django"
+      ],
+      "job_types": [
+        "Full Time"
+      ],
+      "location": "Remote",
+      "created_at": 1794819600
+    },
+    {
+      "slug": "broken-listing-481000",
+      "company_name": "",
+      "title": "?",
+      "description": "",
+      "remote": false,
+      "url": "not-a-url",
+      "tags": [],
+      "job_types": [],
+      "location": "",
+      "created_at": 1794733200
+    },
+    {
+      "slug": "devops-engineer-alpenops-zurich-480990",
+      "company_name": "AlpenOps",
+      "title": "DevOps Engineer",
+      "description": "Kubernetes, Terraform, Python scripting.",
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/alpenops/devops-engineer-480990",
+      "tags": [
+        "DevOps",
+        "Kubernetes",
+        "Python"
+      ],
+      "job_types": [
+        "Contract"
+      ],
+      "location": "Zurich",
+      "created_at": 1792141200
+    }
+  ],
+  "links": {
+    "next": "https://www.arbeitnow.com/api/job-board-api?page=2"
+  },
+  "meta": {
+    "current_page": 1
+  }
+}

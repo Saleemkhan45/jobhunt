@@ -1,0 +1,4 @@
+aiohttp>=3.9
+pydantic>=2.5
+rich>=13.0
+pytest>=8.0

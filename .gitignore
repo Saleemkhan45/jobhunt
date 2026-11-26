@@ -1,0 +1,23 @@
+# virtual environment
+.venv/
+venv/
+env/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+
+# your personal data (generated at runtime)
+data/*.json
+data/*.tmp
+!data/samples/
+
+# env / editor
+.env
+.vscode/
+.idea/
+.DS_Store

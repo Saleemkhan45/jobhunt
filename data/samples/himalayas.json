@@ -1,0 +1,101 @@
+{
+  "comments": "sample",
+  "updatedAt": 1795597200,
+  "offset": 0,
+  "limit": 20,
+  "totalCount": 4,
+  "jobs": [
+    {
+      "title": "Junior Full Stack Developer",
+      "excerpt": "MERN stack plus some Python scripting.",
+      "companyName": "Brightloop",
+      "companySlug": "brightloop",
+      "employmentType": "Full Time",
+      "minSalary": 40000,
+      "maxSalary": 55000,
+      "currency": "USD",
+      "seniority": [
+        "Entry-level"
+      ],
+      "locationRestrictions": [],
+      "categories": [
+        "Full-Stack-Developer"
+      ],
+      "description": "<p>MERN stack plus some Python scripting. Duplicate of the Remotive listing.</p>",
+      "pubDate": 1795597200,
+      "applicationLink": "https://himalayas.app/companies/brightloop/jobs/junior-full-stack-developer",
+      "guid": "https://himalayas.app/companies/brightloop/jobs/junior-full-stack-developer"
+    },
+    {
+      "title": "Python Developer — APIs & Automation",
+      "excerpt": "Build internal automation tools and REST APIs in Python.",
+      "companyName": "Lemonade Labs",
+      "companySlug": "lemonade-labs",
+      "employmentType": "Full Time",
+      "minSalary": 60000,
+      "maxSalary": 80000,
+      "currency": "USD",
+      "seniority": [
+        "Mid-level"
+      ],
+      "locationRestrictions": [
+        "Pakistan",
+        "India",
+        "Bangladesh"
+      ],
+      "categories": [
+        "Python-Developer",
+        "Backend-Developer"
+      ],
+      "description": "<p>Python, asyncio, PostgreSQL.</p>",
+      "pubDate": 1795510800,
+      "applicationLink": "https://himalayas.app/companies/lemonade-labs/jobs/python-developer-apis-automation",
+      "guid": "https://himalayas.app/companies/lemonade-labs/jobs/python-developer-apis-automation"
+    },
+    {
+      "title": "Software Engineering Intern (Summer 2027)",
+      "excerpt": "12-week paid internship working on Python services.",
+      "companyName": "Orbitly",
+      "companySlug": "orbitly",
+      "employmentType": "Intern",
+      "minSalary": null,
+      "maxSalary": null,
+      "currency": "USD",
+      "seniority": [
+        "Entry-level"
+      ],
+      "locationRestrictions": [
+        "United States",
+        "Canada"
+      ],
+      "categories": [
+        "Software-Engineer"
+      ],
+      "description": "<p>Python, Go, Kubernetes.</p>",
+      "pubDate": 1795338000,
+      "applicationLink": "https://himalayas.app/companies/orbitly/jobs/software-engineering-intern-summer-2027",
+      "guid": "https://himalayas.app/companies/orbitly/jobs/software-engineering-intern-summer-2027"
+    },
+    {
+      "title": "Freelance Web Scraping Developer",
+      "excerpt": "Python scraping with Playwright and Scrapy.",
+      "companyName": "DataHarvest",
+      "companySlug": "dataharvest",
+      "employmentType": "Contractor",
+      "minSalary": null,
+      "maxSalary": null,
+      "currency": "USD",
+      "seniority": [
+        "Mid-level"
+      ],
+      "locationRestrictions": [],
+      "categories": [
+        "Python-Developer"
+      ],
+      "description": "<p>Project-based.</p>",
+      "pubDate": 1794992400,
+      "applicationLink": "https://himalayas.app/companies/dataharvest/jobs/freelance-web-scraping-developer",
+      "guid": "https://himalayas.app/companies/dataharvest/jobs/freelance-web-scraping-developer"
+    }
+  ]
+}
